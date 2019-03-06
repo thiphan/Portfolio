@@ -10,6 +10,7 @@
     <title>Thi Phan</title>
 
 
+
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -61,38 +62,15 @@
 </header>
 
 <main role="main">
-
-  <section class="jumbotron text-center">
-    <div class="container">
-      <h1 class="jumbotron-heading">Hi, I am Thi Phan</h1>
-      <p class="lead text-muted">Hey, What'up? I am a computer science student of University of Memphis. I love to make Django websites and iOS application.</p>
-      <p><img src="{% static 'thi.jpg'%}" height="300" /></p>
-
-
-      <p>
-        <a href="mailto:thoaptk07@gmail.com" class="btn btn-primary my-2">Email Me</a>
-      </p>
+  <div class ="container">
+    <div class="text-center">
+      <h1 class="text-center pt-3">{{blog.title}}</h1>
+      <p class="text-center">{{blog.pub_date}}</p>
+      <img class="text-center img-fluid"  src="{{ blog.image.url }}" width="50%" height="50%"/>
+      <br />
+      <br />
+      <p>{{blog.body}}</p>
     </div>
-  </section>
-
-  <div class="album py-5 bg-light">
-    <div class="container">
-
-      <div class="row">
-
-        {% for job in jobs.all%}
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" width="100%" height="225" src="{{job.image.url}}" />
-            <div class="card-body">
-              <p class="card-text">{{job.summary}}</p>
-            </div>
-          </div>
-        </div>
-        {%endfor%}
-    </div>
-  </div>
-
 </main>
 
 <footer class="text-muted">
